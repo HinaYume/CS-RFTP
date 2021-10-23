@@ -1,7 +1,7 @@
 # 專案建置教學
 
 ### ・clone llvm source code：
-  e.g. git clone https://github.com/llvm/llvm-project.git -b release/5.x
+  git clone https://github.com/llvm/llvm-project.git -b release/5.x
   
 ### ・將四個資料夾分別覆蓋貼上至llvm source code
   1. include → llvm-project/clang
