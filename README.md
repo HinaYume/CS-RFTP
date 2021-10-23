@@ -4,7 +4,7 @@
 ```
 git clone https://github.com/llvm/llvm-project.git -b release/5.x
 ```
-### 2. 將四個資料夾分別覆蓋貼上至llvm source code
+### 2. 將四個資料夾分別覆蓋貼上至llvm source code之下
   * include → llvm-project/clang
   * lib → llvm-project/clang
   * libclang → llvm-project/clang/tools
@@ -37,5 +37,12 @@ sudo cp $LLVM_BUILD/bin/For_Fork /usr/bin
 
 # For_Fork使用教學
 
+### Compiler Directive格式
 
+```c
+#pragma protect("MonitorVoting") voteMethod targer(("varName","varType"),...) monitor("mode or threshold","mode") dep(("varName","varType"),...)
+{
+ // protected scope
+}
+```
 
