@@ -37,7 +37,7 @@ sudo cp $LLVM_BUILD/bin/For_Fork /usr/bin
 
 # For_Fork使用教學
 
-### 使用Compiler directive規定相關參數以及受保護區間
+### 1. 使用Compiler directive規定相關參數以及受保護區間
 
 ```c
 #pragma protect("MonitorVoting") voteMethod target(("varName","varType"),...) monitor("mode or threshold","mode") dep(("varName","varType"),...)
@@ -54,7 +54,7 @@ e.q.
  // protected scope.
 }
 ```
-### 使用For_Fork將目標程式碼轉換為Fault-tolerant code
+### 2. 使用For_Fork將目標程式碼轉換為Fault-tolerant code
 
 ```
 For_Fork targetProgram --> faultTolerantProgram
@@ -66,7 +66,7 @@ e.g.
 For_Fork matrix1.cpp --> matrix1_FT.c
 ```
 
-### 編譯並執行轉換過的Fault-tolerant code
+### 3. 編譯並執行轉換過的Fault-tolerant code
 
 e.g. 
 
