@@ -71,6 +71,7 @@ For_Fork matrix1.cpp --> matrix1_FT.c
 e.g. 
 
 `gcc matrix1_FT.c -o matrix_FT`
+
 `./matrix_FT`
 
 ※ 若是voteMethod選擇multithread的情況下，編譯則須加上-fopenmp的參數
