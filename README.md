@@ -37,12 +37,42 @@ sudo cp $LLVM_BUILD/bin/For_Fork /usr/bin
 
 # For_Fork使用教學
 
-### Compiler Directive格式
+### 使用Compiler directive規定相關參數以及受保護區間
 
 ```c
-#pragma protect("MonitorVoting") voteMethod targer(("varName","varType"),...) monitor("mode or threshold","mode") dep(("varName","varType"),...)
+#pragma protect("MonitorVoting") voteMethod target(("varName","varType"),...) monitor("mode or threshold","mode") dep(("varName","varType"),...)
 {
- // protected scope
+ // protected scope.
 }
 ```
+
+e.q.
+
+```c
+#pragma protect("MonitorVoting") multiprocess target(("pi","float"),("e","float")) monitor("5","abnormal") dep(("n","float"),("s","float"),("r","int"),("x","float"))
+{
+ // protected scope.
+}
+```
+### 使用For_Fork將目標程式碼轉換為Fault-tolerant code
+
+```
+For_Fork targetProgram --> faultTolerantProgram
+```
+
+e.g.
+
+```
+For_Fork matrix1.cpp --> matrix1_FT.c
+```
+
+### 編譯並執行轉換過的Fault-tolerant code
+
+e.g. 
+
+`gcc matrix1_FT.c -o matrix_FT`
+`./matrix_FT`
+
+※ 若是voteMethod選擇multithread的情況下，編譯則須加上-fopenmp的參數
+
 
