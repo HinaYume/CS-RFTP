@@ -10,7 +10,8 @@
   * Vote → llvm-project/clang-tools-extra
 
 ### 編譯llvm
- e.g. 
+ e.g.
+ 
     `cd $LLVM_BUILD`
     `cmake -DCLANG_OPENMP_NVPTX_DEFAULT_ARCH=sm_37 -DLIBOMPTARGET_NVPTX_COMPUTE_CAPABILITIES=37,60,70 \
     -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;openmp" \
