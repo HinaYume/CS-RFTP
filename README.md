@@ -32,7 +32,7 @@ make -j8
   e.g. 
 
 ```
-sudo cp $LLVM_BUILD/bin/For_Fork /usr/bin`
+sudo cp $LLVM_BUILD/bin/For_Fork /usr/bin
 ```
 
 # For_Fork使用教學
