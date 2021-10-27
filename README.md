@@ -4,13 +4,16 @@
 ```
 git clone https://github.com/llvm/llvm-project.git -b release/5.x
 ```
-### 2. 將四個資料夾分別覆蓋貼上至llvm source code之下
+### 2. 將四個資料夾分別覆蓋、貼上至llvm source code之下
   * include → llvm-project/clang
   * lib → llvm-project/clang
   * libclang → llvm-project/clang/tools
   * Vote → llvm-project/clang-tools-extra
 
-### 3. 編譯llvm
+### 3. 將CMakeLists.txt覆蓋至llvm-project/clang-tools-extra之下（與Vote同一層）
+  * 或是編輯llvm-project/clang-tools-extra之下的CMakeLists.txt，在add_subdirectory(tool-template)之下新增一行add_subdirectory(Vote/For_Fork)
+  * 
+### 4 編譯llvm
  e.g.
  
 ```
@@ -28,7 +31,7 @@ cmake -DCLANG_OPENMP_NVPTX_DEFAULT_ARCH=sm_37 -DLIBOMPTARGET_NVPTX_COMPUTE_CAPAB
 make -j8
 ```
 
-### 4. 將編譯完成的bin檔複製到/usr/bin之中
+### 5. 將編譯完成的bin檔複製到/usr/bin之中
   e.g. 
 
 ```
