@@ -11,8 +11,12 @@ git clone https://github.com/llvm/llvm-project.git -b release/5.x
   * Vote → llvm-project/clang-tools-extra
 
 ### 3. 將CMakeLists.txt覆蓋至llvm-project/clang-tools-extra之下（與Vote同一層）
-  * 或是編輯llvm-project/clang-tools-extra之下的CMakeLists.txt，在add_subdirectory(tool-template)之下新增一行add_subdirectory(Vote/For_Fork)
-  * 
+  * 或是編輯llvm-project/clang-tools-extra之下的CMakeLists.txt
+```
+add_subdirectory(tool-template)
+add_subdirectory(Vote/For_Fork)
+```
+
 ### 4 編譯llvm
  e.g.
  
